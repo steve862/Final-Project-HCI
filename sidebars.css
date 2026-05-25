@@ -1,0 +1,366 @@
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+html {
+  height: -webkit-fill-available;
+}
+main {
+  background-color: #111111;
+  min-height: 100vh;
+}
+/*Header*/
+.mainHeader{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  height: 50px;
+  width: 100%;
+  transition: all 0.4s ease;
+  padding-block: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+.sidebar.collapsed + .content .mainHeader{
+  background: #1d3556;
+}
+#webLogo{
+  margin-left: 10px;
+  width: 160px;
+  height: auto;
+}
+.heroBannerContainer{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.heroBannerTxtContainer{
+  font-size: 15px;
+  color: white;
+  grid-column: 1;      
+  grid-row: 1;
+  z-index: 0;
+  align-self: start; 
+  top: 10%;
+  justify-self: left;
+  margin-left: 2%;
+  width: 60%;
+  padding: 15px;
+  margin-top: 9vh;
+}
+#heroBanner{
+  grid-column: 1;
+  grid-row: 1; 
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: 70% 50%
+}
+
+
+
+
+
+
+#heroBannerBtn1 { /*We use Gradient Generator: https://cssgradient.io*/
+  text-wrap: nowrap;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 20px;
+  background: 
+    linear-gradient(#00000000, #11111100) padding-box, 
+    linear-gradient(135deg, #FF758C, #70A1FF, #FF758C) border-box;
+  border: none;
+  background-size: 100% 100%, 200% auto;
+  animation: moveGradient 4s linear infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 5px;
+}
+#heroBannerBtn1:hover {
+  transform: translateY(-2px); 
+  box-shadow: 0px 0px 15px rgba(112, 161, 255, 0.3);
+}
+#heroBannerBtn2{
+  color: white;
+  text-wrap: nowrap;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 20px;
+  border: 1px solid rgb(255, 255, 255);
+  margin-top: 10px;
+  transition: all 0.4s ease;
+}
+#heroBannerBtn2:hover{
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+  position: relative;
+  transform: translateY(-2px); 
+  overflow: hidden;
+}
+
+
+/*Main Content*/
+.content{
+  background-color: white;
+}
+.heroBannerBellowContainer{
+  font-size: 12px;
+  color: white;
+  background-color: #222222;
+  padding: 20px;
+}
+#heroBannerBellowHead{
+  font-size: 15px;
+}
+.heroBannerBellowContent{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 10px;
+}
+.heroBannerBellowCard{
+  width: 47%;
+}
+.heroBannerBellowCard h3{
+  font-size: 20px;
+}
+.mainContainerSeciton1 { /*About Organization Content /*/
+  display: grid;
+  grid-template-columns: 1fr;
+}
+#mainContentAboutImage {
+  grid-column: 1;
+  grid-row: 1;  
+  width: 100%;
+  height: 100vh; 
+  object-fit: cover;
+  object-position: 30% 50%;
+  filter: brightness(50%);
+}
+.mainContentAbout {
+  grid-column: 1;      
+  grid-row: 1;
+  align-self: center; 
+  justify-self: left;
+  margin-left: 7%;
+  width: 80%;
+  font-size: 1.2rem;
+  color: rgb(232, 232, 232);
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.175);
+  backdrop-filter: blur(12px);
+}
+.card{/*News Card*/
+  width: 85vw;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+}
+/* Aside */
+.sidebar {
+  width: 40px;
+  background-color: transparent;
+  height: 100vh;
+  transition: 0.3s;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+.sidebar .nav-item,
+.sidebar .dropdown{
+  display: none;
+}
+.sidebar.collapsed .nav-item,
+.sidebar.collapsed .dropdown{
+  display: flex;
+}
+.sidebar.collapsed { /*Opened sidebar*/
+  background-color: rgb(237, 237, 237);
+  width: 150px;
+  top: 0;
+}
+.sidebar.collapsed .navItemName {
+  opacity: 1;
+}
+.sidebar.collapsed .navItemToolTip[data-bs-toggle="tooltip"] { 
+  pointer-events: auto !important; 
+}
+
+/* Hide the actual Bootstrap tooltips globally when the sidebar is expanded */
+body:has(.sidebar.collapsed) .tooltip {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.sidebar.collapsed .nav-item:hover {
+  transition: all 0.4s ease;
+}
+#menubarBtn{
+  color: white;
+  background-color: rgba(141, 141, 255, 0);
+  font-size: 20px;
+  margin-top: 10px;
+  border: none;
+  z-index: 3;
+}
+.sidebar.collapsed #menubarBtn {
+  font-size: 25px;
+  color: black;
+  border: none;
+  margin: 10px 5px;
+}
+.navItemName{
+  color: black;
+  font-size: 17px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  margin-left: 10px;
+}
+.tooltip {
+  pointer-events: none;
+}
+.activeNavItem{ /*Selected nav Item*/
+  background-color: #6C8CFF;
+  color: white;
+}
+.activeNavItem svg { /*Selected nav Item (Icon)*/
+  color: white;
+}
+.activeNavItem .navItemName {
+  color: white;
+}
+.nav-item:hover { /*Hover navItems*/
+  background-color: #6c8cff43;
+}
+ .sidebar.collapsed .bi{
+    fill: #6C8CFF;
+  }
+@media (min-width: 600px) {
+  /*Header*/
+  .heroBannerTxtContainer{
+    width: 45%;
+  }
+  .heroBannerTxtContainer{
+    font-size: 20px;
+    align-self: center; 
+  }
+  /*Main Content Desktop*/
+  .heroBannerBellowContainer{
+    font-size: 15px;
+    color: white;
+    background-color: #222222;
+    padding: 20px;
+  }
+  #heroBannerBellowHead{
+    font-size: 1.5rem;
+  }
+  .heroBannerBellowContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    margin-left: 20px;
+  }
+  .heroBannerBellowCard{
+    width: 20%;
+  }
+  .heroBannerBellowCard h3{
+    font-size: 2rem;
+  }
+  #mainContentAboutImage {
+    width: 100%;
+    height: 60vh; 
+    object-fit: cover;
+    object-position: 30% 50%;
+    filter: brightness(100%);
+  }
+  .mainContentAbout {
+    grid-column: 1;      
+    grid-row: 1;
+    z-index: 2;
+    align-self: center; 
+    justify-self: right;
+    margin-left: 2%;
+    width: 50%;
+    font-size: 1rem;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+  }
+  .card{
+    width: 20vw;
+  }
+  /*Adside Desktop*/
+  .layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  .sidebar{
+    background-color: #111111;
+    width: 60px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    flex-shrink: 0;
+    transition: 0.3s;
+  }
+   .content {
+    flex: 1;
+    min-width: 0;
+    padding-right: 0;
+  }
+  .sidebar .bi{
+    color: white;
+  }
+  .sidebar .nav-item,
+  .sidebar .dropdown{
+    display: inline;
+  }
+  .sidebar.collapsed { /*Opened sidebar*/
+    width: 200px;
+  }
+  .sidebar.collapsed .navItemName {
+    opacity: 1;
+  }
+  .sidebar.collapsed .nav-item:hover {
+    transition: all 0.4s ease;
+  }
+  .menubar{
+    margin-left: 10px;
+  }
+  #menubarBtn{
+    color: rgb(255, 255, 255);
+    background: none;
+    font-size: 25px;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+  }
+  .sidebar.collapsed #menubarBtn {
+    margin: 0px 0px;
+    font-size: 25px;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+  }
+}
+/*Animation*/
+@keyframes moveGradient { /*Gradient Animation (Hero Banner btn)*/
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
