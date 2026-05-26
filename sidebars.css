@@ -701,6 +701,9 @@ body:has(.sidebar.collapsed) .tooltip {
 /*==================TABLE-PAGE================
 ==============================================*/
 /* SECTION */
+.containerTable{
+  overflow-x: hidden;
+}
 .tableHeadContainer{
   color:white;
   background-color: #222222;
@@ -712,12 +715,12 @@ body:has(.sidebar.collapsed) .tooltip {
   align-items: center;
   width: 100%;
   gap: 10px;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 /* TABLE WRAPPER */
 .table-container{
   width: 100%;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 .table-responsive th, 
 .table-responsive td {
@@ -726,21 +729,6 @@ body:has(.sidebar.collapsed) .tooltip {
 }
 .text-nowrap {
   white-space: nowrap !important;
-}
-@media (min-width: 600px) {
-  .servicePackages,
-  .eventSchedule{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    overflow-x: auto;
-  }
-  .table-responsive th, 
-  .table-responsive td {
-    font-size: 1rem;
-  }
 }
 /*Animation*/
 @keyframes moveGradient { /*Gradient Animation (Hero Banner btn)*/
