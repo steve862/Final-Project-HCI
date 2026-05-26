@@ -1,0 +1,786 @@
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  overflow-x: hidden;
+}
+html {
+  height: -webkit-fill-available;
+}
+main {
+  background-color: #111111;
+  min-height: 100vh;
+}
+body.contactPageBody, 
+.ContactPageContent{
+  background-color: #2b3035 !important; 
+  flex: 1;
+  min-width: 0;
+  padding-right: 0;
+}
+/*================INDEX-PAGE================
+============================================*/
+/*Header*/
+.mainHeader{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  height: 50px;
+  width: 100%;
+  transition: all 0.4s ease;
+  padding-block: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+.sidebar.collapsed + .content .mainHeader{
+  background: #1d3556;
+}
+#webLogo{
+  margin-left: 10px;
+  width: 160px;
+  height: auto;
+}
+.heroBannerContainer{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.heroBannerTxtContainer{
+  font-size: 15px;
+  color: white;
+  grid-column: 1;      
+  grid-row: 1;
+  z-index: 0;
+  align-self: start; 
+   justify-self: left;
+  top: 10%;
+  width: 60%;
+  padding: 15px;
+  margin-top: 9vh;
+  margin-left: 2%;
+  animation: fadeLeftToRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+#heroBanner{
+  grid-column: 1;
+  grid-row: 1; 
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: 70% 50%
+}
+#heroBannerBtn1 { /*We use Gradient Generator: https://cssgradient.io*/
+  text-wrap: nowrap;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 20px;
+  background: 
+    linear-gradient(#00000000, #11111100) padding-box, 
+    linear-gradient(135deg, #FF758C, #70A1FF, #FF758C) border-box;
+  border: none;
+  background-size: 100% 100%, 200% auto;
+  animation: moveGradient 4s linear infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 5px;
+}
+#heroBannerBtn1:hover {
+  transform: translateY(-2px); 
+  box-shadow: 0px 0px 15px rgba(112, 161, 255, 0.3);
+}
+#heroBannerBtn2{
+  color: white;
+  text-wrap: nowrap;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 20px;
+  border: 1px solid rgb(255, 255, 255);
+  margin-top: 10px;
+  transition: all 0.4s ease;
+}
+#heroBannerBtn2:hover{
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+  position: relative;
+  transform: translateY(-2px); 
+  overflow: hidden;
+}
+
+
+/*Main Content*/
+.content{
+  background-color: white;
+}
+.heroBannerBellowContainer{
+  font-size: 12px;
+  color: white;
+  background-color: #222222;
+  padding: 20px;
+}
+#heroBannerBellowHead{
+  font-size: 15px;
+}
+.heroBannerBellowContent{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 10px;
+}
+.heroBannerBellowCard{
+  width: 47%;
+  animation: BottomToTop cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-timeline: view();
+}
+.heroBannerBellowCard h3{
+  font-size: 20px;
+}
+.cardNews{/*News Card*/
+  width: 80vw;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.cardNewsImg{
+  height: 50%;
+  object-fit: cover;
+  
+}
+.cardNewsTitle{
+  font-size: 1.5rem;
+}
+.cardNews:hover{
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+}
+.cardNewsBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  background-color: #6C8CFF;
+  color: white;
+  border: none;
+  padding: 10px;
+  transition: 0.3s;
+}
+.cardNews:hover .cardNewsBtn{
+  background-color: #4F73E6;
+}
+.cardNewsBtn:hover{
+  color: white;
+  padding: 10px;
+  transform: translateY(-5px);
+}
+.mainContainerSeciton1 { /*About Organization Content /*/
+  display: grid;
+  grid-template-columns: 1fr;
+}
+#mainContentAboutImage {
+  grid-column: 1;
+  grid-row: 1;  
+  width: 100%;
+  height: 100vh; 
+  object-fit: cover;
+  object-position: 30% 50%;
+  filter: brightness(60%);
+}
+.mainContentAbout {
+  grid-column: 1;      
+  grid-row: 1;
+  align-self: center; 
+  justify-self: left;
+  margin-left: 7%;
+  width: 80%;
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.175);
+  backdrop-filter: blur(12px);
+  animation: RightToLeft cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-timeline: view();
+}
+/* Aside */
+.sidebar {
+  width: 40px;
+  background-color: transparent;
+  height: 100vh;
+  transition: 0.3s;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+.sidebar .nav-item,
+.sidebar .dropdown{
+  display: none;
+}
+.sidebar.collapsed .nav-item,
+.sidebar.collapsed .dropdown{
+  display: flex;
+}
+.sidebar.collapsed { /*Opened sidebar*/
+  background-color: rgb(237, 237, 237);
+  width: 150px;
+  top: 0;
+}
+.sidebar.collapsed .navItemName {
+  opacity: 1;
+}
+.sidebar.collapsed .navItemToolTip[data-bs-toggle="tooltip"] { 
+  pointer-events: auto !important; 
+}
+
+/* Hide the actual Bootstrap tooltips globally when the sidebar is expanded */
+body:has(.sidebar.collapsed) .tooltip {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.sidebar.collapsed .nav-item:hover {
+  transition: all 0.4s ease;
+}
+#menubarBtn{
+  color: white;
+  background-color: rgba(141, 141, 255, 0);
+  font-size: 20px;
+  margin-top: 10px;
+  border: none;
+  z-index: 3;
+}
+.sidebar.collapsed #menubarBtn {
+  font-size: 25px;
+  color: black;
+  border: none;
+  margin: 10px 5px;
+}
+.navItemName{
+  color: black;
+  font-size: 17px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  margin-left: 10px;
+}
+.tooltip {
+  pointer-events: none;
+}
+.activeNavItem{ /*Selected nav Item*/
+  background-color: #6C8CFF;
+  color: white;
+}
+.activeNavItem svg { /*Selected nav Item (Icon)*/
+  color: white;
+}
+.activeNavItem .navItemName {
+  color: white;
+}
+.nav-item:hover { /*Hover navItems*/
+  background-color: #6c8cff43;
+}
+ .sidebar.collapsed .bi{
+    fill: #6C8CFF;
+  }
+@media (min-width: 600px) {
+  /*Header*/
+  .heroBannerTxtContainer{
+    width: 45%;
+    font-size: 20px;
+    align-self: center;
+  }
+  /*Main Content Desktop*/
+  .heroBannerBellowContainer{
+    font-size: 15px;
+    color: white;
+    background-color: #222222;
+    padding: 20px;
+  }
+  #heroBannerBellowHead{
+    font-size: 1.5rem;
+  }
+  .heroBannerBellowContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    margin-left: 20px;
+  }
+  .heroBannerBellowCard{
+    width: 20%;
+  }
+  .heroBannerBellowCard h3{
+    font-size: 2rem;
+  }
+  #mainContentAboutImage {
+    width: 100%;
+    height: 60vh; 
+    object-fit: cover;
+    object-position: 30% 50%;
+  }
+  .mainContentAbout {
+    grid-column: 1;      
+    grid-row: 1;
+    z-index: 2;
+    align-self: center; 
+    justify-self: right;
+    margin-left: 2%;
+    width: 50%;
+    font-size: 1rem;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+  }
+  .cardNews{
+    width: 20vw;
+  }
+  /*Adside Desktop*/
+  .layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  .sidebar{
+    background-color: #111111;
+    width: 60px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    flex-shrink: 0;
+    transition: 0.3s;
+  }
+   .content {
+    flex: 1;
+    min-width: 0;
+    padding-right: 0;
+  }
+  .sidebar .bi{
+    color: white;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .nav-item:hover .bi{ /*Animation for NavIcons*/
+    transform: rotate(-10deg);
+  }
+  .sidebar .nav-item,
+  .sidebar .dropdown{
+    display: inline;
+  }
+  .sidebar.collapsed { /*Opened sidebar*/
+    width: 200px;
+  }
+  .sidebar.collapsed .navItemName {
+    opacity: 1;
+  }
+  .sidebar.collapsed .nav-item:hover {
+    transition: all 0.4s ease;
+  }
+  .sidebar.collapsed .nav-item a{
+     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .sidebar.collapsed .nav-item:hover a{ /*Animation for NavIcons fade left to right*/
+    transform: translateX(10px);
+  }
+  .menubar{
+    margin-left: 10px;
+  }
+  #menubarBtn{
+    color: rgb(255, 255, 255);
+    background: none;
+    font-size: 25px;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+  }
+  .sidebar.collapsed #menubarBtn {
+    margin: 0px 0px;
+    font-size: 25px;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+  }
+}
+/*================CONTACT-PAGE================
+==============================================*/
+.heroBannerContainer{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.contactPageheroBannerTxtContainer{
+  display: block;
+  font-size: 15px;
+  color: white;
+  grid-column: 1;      
+  grid-row: 1;
+  z-index: 0;
+  align-self: start; 
+  justify-self: left;
+  width: 60%;
+  padding: 15px;
+  margin-top: 9vh;
+  margin-left: 2%;
+  animation: fadeLeftToRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.contactContainerSection1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containerFormContact {
+  background: 
+    linear-gradient(#00000000, #11111100) padding-box, 
+    linear-gradient(135deg, #FF758C, #70A1FF, #FF758C) border-box;
+  border: none;
+  background-size: 100% 100%, 200% auto;
+  animation: moveGradient 4s linear infinite;
+  margin: 5px;
+  width: 90%;
+  height: 90%;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  position: relative;
+  margin-block: 20px;
+}
+#contactFormHead {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #ffffff;
+}
+.contactFormGroup {
+  margin-bottom: 18px;
+}
+.contactFormLabel {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #ffffff;
+}
+.contactFormInput,
+.contactFormSelect,
+.contactFormTextarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 12px;
+  transition: border 0.3s;
+}
+.contactFormInput:focus,
+.contactFormSelect:focus,
+.contactFormTextarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+.contactFormTextarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.contactFormContainerBtn{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: rgb(25, 25, 25);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.165);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.submit-btn:hover {
+  background: #4F73E6;
+}
+.reset-btn {
+  width: 100%;
+  padding: 14px;
+  background: #df0013;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.165);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.reset-btn:hover {
+  background: #4F73E6;
+}
+@media (min-width: 600px) {
+  body.contactPageBody, 
+  .ContactPageContent{
+    overflow-y: hidden;
+  }
+  .contactPageheroBannerTxtContainer{
+    font-size: 20px;
+    display: none ;
+  }
+  .contactContainerSection1{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 50px;
+  }
+  .containerFormContact {
+    top:60px;
+    width: 500px;
+    height: 90%;
+    max-height: 600px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: absolute;
+    margin-block: 0px;
+  }
+  .contactFormInput,
+  .contactFormSelect,
+  .contactFormTextarea {
+      width: 100%;
+      font-size: 15px;
+      transition: border 0.3s;
+    }
+    .contactFormTextarea {
+    resize: vertical;
+    min-height: 10px;
+  }
+}
+@media (min-width: 850px) { 
+  .contactPageheroBannerTxtContainer{
+    display: block;
+    width: 35%;
+    align-self: center;
+  }
+}
+/*================ABOUT-PAGE================
+==============================================*/
+.aboutheroBannerBellowCard {
+  width: 100%;
+  animation: BottomToTop cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-timeline: view();
+}
+.aboutheroBannerBellowCard h3 {
+  font-size: 20px;
+  margin: 2%;
+}
+.aboutContainerSection1{
+  padding-block: 20px;
+  background: 
+    linear-gradient(#00000000, #11111100) padding-box, 
+    linear-gradient(135deg, #11998e, #38ef7d) border-box;
+  border: none;
+  background-size: 100% 100%, 200% auto;
+  animation: moveGradient 4s linear infinite;
+}
+#aboutCardAchievementHead{
+  color: white;
+  margin-left: 2%;
+}
+.cardBackgroundContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+#cardBackgroundImg{
+  width: 30%;
+  height: 30%;
+  object-fit: cover;
+}
+.cardAboutContainer{ /*Achievements Cards*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.cardAbout {
+  color: rgb(255, 255, 255);
+  background-color: #2d4e7c;
+  width: 100%;
+  max-width: 45%;
+  padding: 10px;
+}
+.aboutContainerSection2{
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.cardBackgroundContainer{ /*Background Card*/
+  color: white;
+  border: none;
+  border-radius: 0;
+}
+.cardBacgroundContent{
+  margin: 10px;
+}
+.cardBackgroundContainer img{
+  border-radius: 0;
+}
+.cardBacgroundContent{
+  margin: 30px;
+}
+.aboutContainerSection3{
+  text-align: center;
+}
+.coreValue{
+  margin: 3% 10%;
+}
+@media (min-width: 600px) {
+  .cardAboutContainer {
+    flex-direction: row;
+  }
+  .aboutheroBannerBellowCard {
+    width: 20%;
+  }
+  .aboutheroBannerBellowCard h3 {
+    font-size: 2rem;
+  }
+  #aboutheroBannerBellowCard3{
+    width: 47%;
+  }
+  .cardAbout {
+    width: 13vw;
+  }
+}
+/*================SERVICE-PAGE================
+==============================================*/
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.cardService {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.cardServicesImg {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.cardService .card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.cardNewsText {
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+.cardService:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.cardServiceBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  background-color: #6C8CFF;
+  color: white;
+  width:fit-content;
+  border: none;
+  padding: 10px;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+.cardService:hover .cardNewsBtn{
+  background-color: #4F73E6;
+}
+/*==================TABLE-PAGE================
+==============================================*/
+/* SECTION */
+.tableHeadContainer{
+  color:white;
+  background-color: #222222;
+}
+.servicePackages,
+.eventSchedule{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  overflow-x: auto;
+}
+/* TABLE WRAPPER */
+.table-container{
+  width: 100%;
+  overflow-x: auto;
+}
+.table-responsive th, 
+.table-responsive td {
+  font-size: 7px;
+  white-space: normal;
+}
+.text-nowrap {
+  white-space: nowrap !important;
+}
+@media (min-width: 600px) {
+  .servicePackages,
+  .eventSchedule{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+  }
+  .table-responsive th, 
+  .table-responsive td {
+    font-size: 1rem;
+  }
+}
+/*Animation*/
+@keyframes moveGradient { /*Gradient Animation (Hero Banner btn)*/
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes fadeLeftToRight { /*Animation for Banner Text fade left to right*/
+  from {
+    opacity: 0;
+    transform: translateX(-70px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes RightToLeft {
+  from {
+    opacity: 0;
+    transform: translateX(50px) scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform:  translateX(0) scale(1);
+  }
+}
+@keyframes BottomToTop {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform:  translateX(0) scale(1);
+  }
+}

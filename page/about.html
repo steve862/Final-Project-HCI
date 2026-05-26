@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Astro v5.13.2" />
+    <title>About</title>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/sidebars/"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script src="../assets/js/color-modes.js"></script>
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="theme-color" content="#712cf9" />
+    <link href="../sidebars.css" rel="stylesheet" />
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: #0000001a;
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow:
+          inset 0 0.5em 1.5em #0000001a,
+          inset 0 0.125em 0.5em #00000026;
+      }
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+      .bd-mode-toggle .bi {
+        width: 1em;
+        height: 1em;
+      }
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none navIcons">
+      <symbol id="home" viewBox="0 0 16 16"> <!--Selected Icon color-->
+        <path 
+          d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"
+        />
+      </symbol>
+      <symbol id="speedometer2" viewBox="0 0 16 16">
+        <path fill="currentColor"
+          d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5M3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.6 26.6 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.93.93 0 0 1-.765.935c-.845.147-2.34.346-4.235.346s-3.39-.2-4.235-.346A.93.93 0 0 1 3 9.219zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a25 25 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25 25 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135"
+        />
+        <path fill="currentColor"
+          d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2zM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5"
+        />
+      </symbol>
+      <symbol id="table" viewBox="0 0 16 16">
+        <path
+          d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"
+        ></path>
+      </symbol>
+      <symbol id="people-circle" viewBox="0 0 16 16">
+        <path
+          d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+        />
+      </symbol>
+      <symbol id="grid" viewBox="0 0 16 16">
+        <path
+          d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"
+        ></path>
+      </symbol>
+    </svg>
+    <main class="d-flex flex-nowrap layout">
+      <aside class="d-flex flex-column flex-shrink-0 text-start sidebar">
+        <div class="w3-teal menubar">
+          <button id="menubarBtn" type="button" onclick="sidebarCollapse()">
+            ☰
+          </button>
+        </div>
+        <span class="visually-hidden">Icon-only</span>
+        <div class="sidebarMobile">
+          <ul class="nav nav-pills nav-flush flex-column mb-auto">
+            <li class="nav-item">
+              <!--Selected Icon bg-->
+              <a
+                href="../index.html"
+                class="nav-link py-3 rounded-0 navItemToolTip"
+                aria-current="page"
+                title="Home"
+                data-bs-toggle="tooltip"
+                data-bs-placement="right"
+              >
+                <svg
+                  class="bi pe-none"
+                  width="24"
+                  height="24"
+                  role="img"
+                  aria-label="Home"
+                >
+                  <use xlink:href="#home"></use>
+                </svg>
+                <span class="navItemName">home</span>
+              </a>
+            </li>
+            <li class="nav-item activeNavItem">
+              <a
+                href="./about.html"
+                class="nav-link py-3 rounded-0 navItemToolTip"
+                title="About"
+                data-bs-toggle="tooltip"
+                data-bs-placement="right"
+              >
+                <svg
+                  class="bi pe-none"
+                  width="24"
+                  height="24"
+                  role="img"
+                  aria-label="About"
+                >
+                  <use xlink:href="#speedometer2"></use>
+                </svg>
+                <span class="navItemName">About</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="./service.html"
+                class="nav-link py-3 rounded-0 navItemToolTip"
+                title="Service"
+                data-bs-toggle="tooltip"
+                data-bs-placement="right"
+              >
+                <svg
+                  class="bi pe-none"
+                  width="24"
+                  height="24"
+                  role="img"
+                  aria-label="Service"
+                >
+                  <use xlink:href="#grid"></use>
+                </svg>
+                <span class="navItemName">Service</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="./gallery.html"
+                class="nav-link py-3 rounded-0 navItemToolTip"
+                title="Gallery"
+                data-bs-toggle="tooltip"
+                data-bs-placement="right"
+              >
+                <svg
+                  class="bi pe-none"
+                  width="24"
+                  height="24"
+                  role="img"
+                  aria-label="Gallery"
+                >
+                  <use xlink:href="#table"></use>
+                </svg>
+                <span class="navItemName">Gallery</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="./contact.html"
+                class="nav-link py-3 rounded-0 navItemToolTip"
+                title="Contact"
+                data-bs-toggle="tooltip"
+                data-bs-placement="right"
+              >
+                <svg
+                  class="bi pe-none"
+                  width="24"
+                  height="24"
+                  role="img"
+                  aria-label="Contact"
+                >
+                  <use xlink:href="#people-circle"></use>
+                </svg>
+                <span class="navItemName">Contact</span>
+              </a>
+            </li>
+          </ul>
+      </aside>
+      <div class="content">
+        <header class="mainHeader">
+          <img id="webLogo" src="../src/logo.png">
+        </header>
+        <article>
+          <header class="heroBannerContainer">
+            <img id="heroBanner" src="../src/heroBanner3.2.png">
+            <div class="heroBannerTxtContainer">
+              <div id="heroBannerHeadtxt">
+                <h1>About Artemis.edu</h1>
+              </div>
+              <div id="heroBannerSubtitle">
+                <p>Inspiring future aerospace innovators through technology, research, and exploration.</p>
+              </div>
+              <div class="herBannerButtonsContainer">
+                <button type="button" id="heroBannerBtn1">
+                  Explore Missions
+                </button>
+                <a href="./contact.html"><button type="button" id="heroBannerBtn2">
+                Join Organization
+              </button></a>
+              </div>
+            </div>
+          </header>
+          <section class="heroBannerBellowContainer">
+            <div class="heroBannerBellowContent">
+              <div class="aboutheroBannerBellowCard">
+                <h3>Mission</h3>
+                <p>To empower students with aerospace knowledge, innovation skills, and collaborative experiences through research, technology, and hands-on learning programs.</p>
+              </div>
+              <div class="aboutheroBannerBellowCard">
+                <h3>Vision</h3>
+                <p>To become a leading student aerospace organization that inspires future scientists, engineers, pilots, and innovators to explore beyond Earth.</p>
+              </div>
+              <div class="aboutheroBannerBellowCard" id="aboutheroBannerBellowCard3">
+                <h3>Why Join Us?</h3>
+is a student-led aerospace community dedicated to advancing knowledge in aviation, robotics, astronomy, and space technology. Founded to inspire innovation and scientific curiosity, the organization provides students with opportunities to participate in aerospace workshops, research programs, engineering projects, and collaborative learning experiences.                <p></p>
+              </div>
+            </div>
+          </section>
+          <section class="aboutContainerSection1">
+            <h3 id="aboutCardAchievementHead">Achievements</h3>
+            <div class="cardAboutContainer">
+              <div class="cardAbout">
+                <h3>500+</h3>
+                <p>Student Members</p>
+              </div>
+              <div class="cardAbout">
+                <h3>35</h3>
+                <p>Aerospace Projects</p>
+              </div>
+              <div class="cardAbout">
+                <h3>20</h3>
+                <p>Workshops finished</p>
+              </div>
+              <div class="cardAbout">
+                <h3>15</h3>
+                <p>Research Activities</p>
+              </div>
+              <div class="cardAbout">
+                <h3>30</h3>
+                <p>Astronomy Events</p>
+              </div>
+              <div class="cardAbout">
+                <h3>48+</h3>
+                <p>Aerospace Missions</p>
+              </div>
+            </div>
+          </section>
+          <section class="aboutContainerSection2">
+            <div class="card mb-3 cardBackgroundContainer" style="width: 100%; background-color: #2d2d2d;">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="../src/cardBackground.jpg" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body cardBacgroundContent">
+                    <h3 class="card-title">How Artemis University is established</h3>
+                    <p class="card-text">Artemis University was established in 2021 by a group of educators, technology enthusiasts, engineers, and aerospace advocates who shared a common vision of inspiring students to explore the future of aviation, aerospace engineering, and space science. Recognizing the growing importance of technology and innovation in modern society, the founders aimed to create an institution that would provide students with advanced learning opportunities focused on scientific discovery, creativity, and technological development. The university was designed to become a center for future innovators where students could gain both theoretical knowledge and practical experience in aerospace-related fields.</p>
+                    <p>From its beginning, Artemis University has focused on providing hands-on learning experiences through collaborative projects, research programs, workshops, and innovation-driven activities. The institution encourages students to explore areas such as robotics, astronomy, artificial intelligence, satellite technology, and aerospace systems while developing leadership, teamwork, and problem-solving skills. Through its commitment to academic excellence and futuristic education, Artemis University continues to prepare students for future careers in aerospace, aviation, engineering, and advanced technology industries while inspiring the next generation of scientists, explorers, and innovators.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="aboutContainerSection3">
+            <h3>Core Values</h3>
+            <div class="coreValue">
+              <h4>Innovation</h4>
+              <p>Encouraging creativity and futuristic thinking in aerospace technology.</p>
+            </div>
+            <div class="coreValue">
+              <h4>Teamwork</h4>
+              <p>Building strong collaboration and communication among students.</p>
+            </div>
+            <div class="coreValue">
+              <h4>Leadership</h4>
+              <p>Developing responsible and confident future aerospace leaders.</p>
+            </div>
+            <div class="coreValue">
+              <h4>Research</h4>
+              <p>Promoting scientific exploration and discovery through projects and experiments.</p>
+            </div>
+            <div class="coreValue">
+              <h4>Excellence</h4>
+              <p>Striving for high-quality learning, innovation, and performance.</p>
+            </div>
+            
+          </section>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="../assets/dist/js/bootstrap.bundle.min.js"
+      class="astro-vvvwv3sm"
+    ></script>
+    <script src="../sidebars.js" class="astro-vvvwv3sm"></script>
+  </body>
+</html>
